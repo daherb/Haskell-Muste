@@ -65,13 +65,11 @@ executable ajax-backend
   
   -- Other library packages from which modules are imported.
   If flag(CGI)
-    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, containers, muste, gf, vector, sqlite-simple, time, cryptonite, crypto-random-api, QuickCheck, base64-bytestring, wai, scgi, cgi, network
--- fastcgi >= 3001.0.2.4, cgi >= 3001.3.0.2
+    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, containers, muste, gf, vector, sqlite-simple, time, cryptonite, crypto-random-api, QuickCheck, base64-bytestring, scgi, cgi, network
   Else
     build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, containers, muste, gf, vector, sqlite-simple, time, cryptonite, crypto-random-api, QuickCheck, base64-bytestring, httpd-shed, network-uri
   -- Directories containing source files.
   -- hs-source-dirs:      
-  
   -- Base language which the package is written in.
   default-language:    Haskell2010
   
