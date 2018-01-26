@@ -54,6 +54,7 @@ executable ajax-backend
   -- .hs or .lhs file containing the Main module.
   If flag(CGI)
     main-is:             Main-CGI.hs
+    ghc-options:         -threaded -rtsopts
   Else
     main-is:             Main-Standalone.hs
   -- Modules included in this executable, other than Main.
@@ -64,9 +65,10 @@ executable ajax-backend
   
   -- Other library packages from which modules are imported.
   If flag(CGI)
-    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, cgi >= 3001.3.0.2, containers, muste, gf
+    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, containers, muste, gf, vector, sqlite-simple, time, cryptonite, crypto-random-api, QuickCheck, base64-bytestring, wai, scgi, cgi, network
+-- fastcgi >= 3001.0.2.4, cgi >= 3001.3.0.2
   Else
-    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, httpd-shed, network-uri,containers,muste,gf,vector,sqlite-simple,time,cryptonite,crypto-random-api,QuickCheck,base64-bytestring
+    build-depends:       base >=4.9 && <4.10, aeson >=0.9, text, bytestring, containers, muste, gf, vector, sqlite-simple, time, cryptonite, crypto-random-api, QuickCheck, base64-bytestring, httpd-shed, network-uri
   -- Directories containing source files.
   -- hs-source-dirs:      
   
